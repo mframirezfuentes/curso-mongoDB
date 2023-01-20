@@ -1,0 +1,12 @@
+use("platzi_store")
+
+
+db.inventory.updateMany(
+  {_id:4},
+  {
+    //operador que solo funciona para arrays agregando elementos
+    $push:{
+      tags: "headphone"
+    }
+  }
+)
