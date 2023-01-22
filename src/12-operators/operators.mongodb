@@ -1,0 +1,31 @@
+use('platzi_store')
+
+//using $gt (>) & $gte (>=)
+
+// db.inventory.find({
+//   qty: {$gt:20}
+// })
+
+// db.inventory.find({
+//   qty: {$gte:25}
+// })
+
+//using $lt (>) & $lte (>=)
+// db.inventory.find({
+//   qty: {$lt:20}
+// })
+// db.inventory.find({
+//   qty:{$lte:20}
+// })
+
+//buscar entre rangos, consultas más complejas
+//JOIN
+// db.inventory.find({
+//   qty:{$gte:25,$lte:35}
+// })
+
+
+db.inventory.find({
+  "item.code": "123",
+   qty:{$gte:20,$lte:25}
+})
