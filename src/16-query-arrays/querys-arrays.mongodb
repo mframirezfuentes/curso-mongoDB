@@ -1,0 +1,37 @@
+use('platzi_store')
+
+//$in, objects, values and arrays
+// db.inventory.find({
+//   qty:{$in:[20,25]}
+// })
+// db.inventory.find({
+//   tags:{$in:["book","electronics"]}
+// })
+
+//$nin, values and arrays
+// db.inventory.find({
+//   tags:{$nin:["book","electronics"]}
+// })
+
+//arrays
+// db.inventory.find({
+//   tags:["school","book"]
+// })
+
+
+// $all que contenga los dos
+// db.inventory.find({tags:{$all :["book","school"]}})
+
+
+// $size entregar un valor númerico --Tamaño del array
+// db.inventory.find({tags:{$size:2}})
+
+// $elemMatch
+// db.survey.find({results: { $elemMatch: {product: "xyz"}  }})
+db.survey.find({
+  results: {
+    $elemMatch: {
+      product: "xyz",
+      score: {$gte:7}
+      }}
+    })
