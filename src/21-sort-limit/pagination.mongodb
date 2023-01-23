@@ -1,0 +1,8 @@
+use('platzi_store')
+
+
+// skip es una técnica de paginación
+db.categories
+.find()
+.skip(0)
+.limit(2)
