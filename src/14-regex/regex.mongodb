@@ -1,0 +1,26 @@
+use('platzi_store')
+
+// db.inventory.find({
+//   "item.description": { $regex:/line/}
+// })
+
+//NOT SENSIBLE CAMEL
+// db.inventory.find({
+//   "item.description": { $regex:/LINE/i}
+// })
+
+//termine con la palabra Line
+// db.inventory.find({
+//   "item.description": { $regex:/line$/i}
+// })
+
+//Empiece con la palabra Single
+// db.inventory.find({
+//   "item.description": { $regex:/^single/i}
+// })
+
+
+//Buscar con saltos de linea m de multilinea
+db.inventory.find({
+  "item.description": { $regex:/^s/im}
+})
