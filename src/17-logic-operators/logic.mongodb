@@ -1,0 +1,40 @@
+use('sample_training')
+
+// AND implicit
+// db.inspections.find({
+//   sector:"Tax Preparers - 891",
+//   result: "Unable to Locate"
+// }).count()
+
+//AND explicit [{},{},{}]
+// db.inspections.find({
+//  $and:[
+//    {sector:"Tax Preparers - 891"},
+//    {result: "Unable to Locate"}
+//   ]
+// }).count()
+
+//OR explicit [{},{},{}]
+// db.inspections.find({
+//  $or:[
+//    {sector:"Tax Preparers - 891"},
+//    {result: "Unable to Locate"}
+//   ]
+// }).count()
+
+//NOR explicit [{},{},{}]
+// db.inspections.find({
+//  $nor:[
+//    {sector:"No Violation Issued"},
+//    {result: "Unable to Locate"}
+//   ]
+// },
+// {
+//   result: 1,
+//   _id:0
+// })
+
+// NOT no recibe un array, se aplica a un atributo usando la negación
+db.inspections.find({
+result: {$not: {$regex :/Unable to Locate/}}
+})
